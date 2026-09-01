@@ -1,0 +1,74 @@
+---
+import Container from './ui/Container.astro';
+---
+
+<footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-12 sm:py-16">
+  <Container>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-900">
+      <!-- Brand & Mission (2 cols) -->
+      <div class="lg:col-span-2 space-y-4">
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center font-black text-white text-base shadow-sm shadow-emerald-600/30">
+            AU
+          </div>
+          <span class="font-extrabold text-slate-100 text-lg group-hover:text-emerald-400 transition">
+            AgentUniver
+          </span>
+        </a>
+        <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+          The Sovereign Autonomous Agent Marketplace & Protocol Fabric. Discover verified AI agents, connect existing stacks via Agent Chat Protocol (ACP), and deploy with open standards.
+        </p>
+        <div class="flex items-center gap-4 text-xs font-medium text-slate-400 pt-2">
+          <a href="https://github.com/AgentUniver" target="_blank" rel="noreferrer" class="hover:text-emerald-400 transition">GitHub</a>
+          <span>·</span>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="hover:text-emerald-400 transition">LinkedIn</a>
+          <span>·</span>
+          <a href="https://x.com" target="_blank" rel="noreferrer" class="hover:text-emerald-400 transition">X</a>
+        </div>
+      </div>
+
+      <!-- Column 1: Marketplace & Platform -->
+      <div class="space-y-3">
+        <div class="text-xs font-bold text-slate-200 uppercase tracking-wider">Marketplace</div>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/marketplace" class="hover:text-emerald-400 transition">Agent Marketplace</a></li>
+          <li><a href="/create" class="hover:text-emerald-400 transition">Connect Your Agent</a></li>
+          <li><a href="/create" class="hover:text-emerald-400 transition">Generate Agent</a></li>
+          <li><a href="#products" class="hover:text-emerald-400 transition">ACP Protocol Gateway</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Ecosystem -->
+      <div class="space-y-3">
+        <div class="text-xs font-bold text-slate-200 uppercase tracking-wider">Ecosystem</div>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#cases" class="hover:text-emerald-400 transition">Case Studies</a></li>
+          <li><a href="#team" class="hover:text-emerald-400 transition">Governance & Grants</a></li>
+          <li><a href="#partners" class="hover:text-emerald-400 transition">Ecosystem Partners</a></li>
+          <li><a href="https://github.com/Agent-Friendly-Network" target="_blank" rel="noreferrer" class="hover:text-emerald-400 transition">AFN Open Standards</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company -->
+      <div class="space-y-3">
+        <div class="text-xs font-bold text-slate-200 uppercase tracking-wider">Company</div>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#company" class="hover:text-emerald-400 transition">About AgentUniver</a></li>
+          <li><a href="#contact" class="hover:text-emerald-400 transition">Partner Program</a></li>
+          <li><a href="mailto:contact@agentuniver.com" class="hover:text-emerald-400 transition">Business Inquiry</a></li>
+          <li><a href="mailto:ir@agentuniver.com" class="hover:text-emerald-400 transition">Investor Relations</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Legal & Copyright -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:underline">Privacy Policy</a>
+        <span>·</span>
+        <a href="#" class="hover:underline">Terms of Service</a>
+      </div>
+      <p>© 2026 AgentUniver Inc. All rights reserved.</p>
+    </div>
+  </Container>
+</footer>

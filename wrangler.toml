@@ -1,0 +1,13 @@
+name = "agentuniver-official-gateway"
+main = "worker-enhanced.js"
+compatibility_date = "2026-08-01"
+
+routes = [
+  { pattern = "agentuniver.com/*", zone_name = "agentuniver.com" },
+  { pattern = "www.agentuniver.com/*", zone_name = "agentuniver.com" }
+]
+
+[vars]
+PRIMARY_ORIGIN = "https://vercel.agentuniver.com"
+SECONDARY_ORIGIN = "https://netlify.agentuniver.com"
+TERTIARY_ORIGIN = "https://qcloud.agentuniver.com"

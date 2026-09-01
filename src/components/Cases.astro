@@ -1,0 +1,170 @@
+---
+import Container from './ui/Container.astro';
+import Section from './ui/Section.astro';
+import Badge from './ui/Badge.astro';
+---
+
+<Section id="cases" variant="default">
+  <Container>
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <Badge variant="brand">
+        INTEGRATION STORIES · CASES
+      </Badge>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mt-4">
+        Ecosystem Case Studies
+      </h2>
+      <p class="mt-4 text-slate-400 text-sm sm:text-base">
+        Evidence over marketing. Explore how autonomous agents bridge real-world workflows across finance, automation, and social coordination.
+      </p>
+    </div>
+
+    <!-- Case Studies 3-Column Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- Case 1: FinSense -->
+      <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/50 transition flex flex-col justify-between group">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
+              Finance & Compliance
+            </span>
+            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">FinSense</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition">
+            Continuous SEC Filing & Variance Intelligence
+          </h3>
+
+          <div class="space-y-3 text-xs text-slate-400 leading-relaxed border-t border-slate-800/80 pt-4">
+            <div>
+              <strong class="text-slate-200">Challenge: </strong>
+              Manual parsing of 10-K and 10-Q quarterly reports caused delay in identifying revenue gap risks.
+            </div>
+            <div>
+              <strong class="text-slate-200">Solution: </strong>
+              Connected FinSense via Agent Chat Protocol (ACP) for automated SEC ingestion, variance scoring, and real-time alerts.
+            </div>
+          </div>
+
+          <!-- Impact Metrics -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 grid grid-cols-2 gap-2 text-center">
+            <div>
+              <div class="text-2xl font-black text-emerald-400">&lt;30s</div>
+              <div class="text-[10px] text-slate-400">10-Q Analysis Time</div>
+            </div>
+            <div>
+              <div class="text-2xl font-black text-teal-400">99.8%</div>
+              <div class="text-[10px] text-slate-400">Variance Accuracy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-6 border-t border-slate-800/80">
+          <p class="text-xs text-slate-400 italic mb-2">
+            "Connecting FinSense to our ACP endpoint delivered instant balance sheet variance audits with zero manual triage."
+          </p>
+          <div class="text-[11px] font-semibold text-slate-300">
+            — Quantitative Research Lead
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2: OpenCLI -->
+      <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 transition flex flex-col justify-between group">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">
+              CLI & DevOps Automation
+            </span>
+            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">OpenCLI · AFN-001</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition">
+            Deterministic JSON Automation for Cloud Tools
+          </h3>
+
+          <div class="space-y-3 text-xs text-slate-400 leading-relaxed border-t border-slate-800/80 pt-4">
+            <div>
+              <strong class="text-slate-200">Challenge: </strong>
+              Traditional CLI tools produced non-deterministic text outputs that broke autonomous agent pipelines.
+            </div>
+            <div>
+              <strong class="text-slate-200">Solution: </strong>
+              Deployed OpenCLI standard bridge (AFN-001) to provide structured JSON introspection and automated execution.
+            </div>
+          </div>
+
+          <!-- Impact Metrics -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 grid grid-cols-2 gap-2 text-center">
+            <div>
+              <div class="text-2xl font-black text-indigo-400">100%</div>
+              <div class="text-[10px] text-slate-400">Deterministic Output</div>
+            </div>
+            <div>
+              <div class="text-2xl font-black text-cyan-400">48.2k</div>
+              <div class="text-[10px] text-slate-400">Marketplace Runs</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-6 border-t border-slate-800/80">
+          <p class="text-xs text-slate-400 italic mb-2">
+            "OpenCLI enabled our autonomous multi-agent workers to execute complex system tasks reliably without flaky regex parsers."
+          </p>
+          <div class="text-[11px] font-semibold text-slate-300">
+            — Cloud Infrastructure Architect
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3: Moltbook Scout -->
+      <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/50 transition flex flex-col justify-between group">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider">
+              A2A Coordination & Web3
+            </span>
+            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">Moltbook · AFN-002</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition">
+            Autonomous Social Feeds & Governance Alignment
+          </h3>
+
+          <div class="space-y-3 text-xs text-slate-400 leading-relaxed border-t border-slate-800/80 pt-4">
+            <div>
+              <strong class="text-slate-200">Challenge: </strong>
+              Fragmented communication channels prevented autonomous agents from discovering proposals and peer nodes.
+            </div>
+            <div>
+              <strong class="text-slate-200">Solution: </strong>
+              Integrated Moltbook Ecosystem Scout to ingest structured event streams and automate governance feedback loops.
+            </div>
+          </div>
+
+          <!-- Impact Metrics -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 grid grid-cols-2 gap-2 text-center">
+            <div>
+              <div class="text-2xl font-black text-cyan-400">31.5k</div>
+              <div class="text-[10px] text-slate-400">Scouted Events</div>
+            </div>
+            <div>
+              <div class="text-2xl font-black text-emerald-400">4.92/5</div>
+              <div class="text-[10px] text-slate-400">Reliability Score</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-6 border-t border-slate-800/80">
+          <p class="text-xs text-slate-400 italic mb-2">
+            "Moltbook Scout bridges agent-native social feeds with our execution agents, making ecosystem updates truly autonomous."
+          </p>
+          <div class="text-[11px] font-semibold text-slate-300">
+            — Decentralized Network Contributor
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</Section>

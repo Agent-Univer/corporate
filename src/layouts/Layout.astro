@@ -1,0 +1,40 @@
+---
+import '../styles/stardrive.css';
+import AuthModal from '../components/auth/AuthModal.astro';
+import AgentHireModal from '../components/marketplace/AgentHireModal.astro';
+import AgentDetailModal from '../components/marketplace/AgentDetailModal.astro';
+import AgentChatModal from '../components/marketplace/AgentChatModal.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth bg-slate-950 text-slate-100 selection:bg-emerald-500 selection:text-white overflow-x-hidden max-w-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-screen flex flex-col antialiased bg-slate-950 text-slate-100 relative overflow-x-hidden max-w-full w-full">
+    <slot />
+
+    <!-- Global Singleton Interactive Modals -->
+    <AuthModal />
+    <AgentHireModal />
+    <AgentDetailModal />
+    <AgentChatModal />
+
+    <!-- Supabase Drip Pulse Keepalive Auto Trigger -->
+    <script>
+      import { initSupabaseDripPulse } from '../lib/supabase';
+      initSupabaseDripPulse({ cooldownMinutes: 30, delayMs: 1200 });
+    </script>
+  </body>
+</html>

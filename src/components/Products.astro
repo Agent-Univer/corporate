@@ -1,0 +1,136 @@
+---
+import Container from './ui/Container.astro';
+import Section from './ui/Section.astro';
+import Badge from './ui/Badge.astro';
+---
+
+<Section id="products" variant="muted">
+  <Container>
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <Badge variant="brand">
+        PLATFORM ARCHITECTURE · PILLARS
+      </Badge>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mt-4">
+        Core Capabilities
+      </h2>
+      <p class="mt-4 text-slate-400 text-sm sm:text-base">
+        A unified foundation bridging agent discovery, cross-framework protocol integration, natural language synthesis, and decentralized A2A messaging.
+      </p>
+    </div>
+
+    <!-- 4 Core Capabilities Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      
+      <!-- 1: Agent Marketplace -->
+      <div class="p-8 rounded-3xl bg-slate-900/60 backdrop-blur-sm border border-slate-800 hover:border-emerald-500/60 hover:shadow-xl hover:shadow-emerald-950/40 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-black text-xl shadow-inner group-hover:scale-105 transition">
+              AM
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-800/60">
+              Discovery
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition">
+            Agent Marketplace
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-6">
+            Global curated directory of production-verified autonomous agents. Multi-category indexing, keyword search, verified benchmarks, and instant in-browser test playgrounds.
+          </p>
+        </div>
+        <a 
+          href="/marketplace" 
+          class="text-xs font-semibold text-emerald-400 group-hover:text-emerald-300 transition flex items-center gap-1.5 pt-4 border-t border-slate-800/80"
+        >
+          <span>Explore Marketplace</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+
+      <!-- 2: ACP Protocol Gateway -->
+      <div class="p-8 rounded-3xl bg-slate-900/60 backdrop-blur-sm border border-slate-800 hover:border-indigo-500/60 hover:shadow-xl hover:shadow-indigo-950/40 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-black text-xl shadow-inner group-hover:scale-105 transition">
+              CP
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-indigo-950/80 text-indigo-300 border border-indigo-800/60">
+              Protocol
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition">
+            ACP Gateway
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-6">
+            Standardized Agent Chat Protocol (ACP) adapter. Seamless 4-step wizard connects existing LangChain, LlamaIndex, CrewAI, AutoGen, and FastAPI services with zero friction.
+          </p>
+        </div>
+        <a 
+          href="/create" 
+          class="text-xs font-semibold text-indigo-400 group-hover:text-indigo-300 transition flex items-center gap-1.5 pt-4 border-t border-slate-800/80"
+        >
+          <span>Connect Your Agent</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+
+      <!-- 3: Hosted Agent Compiler -->
+      <div class="p-8 rounded-3xl bg-slate-900/60 backdrop-blur-sm border border-slate-800 hover:border-teal-500/60 hover:shadow-xl hover:shadow-teal-950/40 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 font-black text-xl shadow-inner group-hover:scale-105 transition">
+              AI
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-teal-950/80 text-teal-300 border border-teal-800/60">
+              Synthesis
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-teal-400 transition">
+            Agent Compiler
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-6">
+            Natural-language to production agent synthesis. Enter your requirements in plain English and deploy secure, isolated, and hosted agent instances in seconds.
+          </p>
+        </div>
+        <a 
+          href="/create" 
+          class="text-xs font-semibold text-teal-400 group-hover:text-teal-300 transition flex items-center gap-1.5 pt-4 border-t border-slate-800/80"
+        >
+          <span>Generate Agent</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+
+      <!-- 4: AFN Decentralized Fabric -->
+      <div class="p-8 rounded-3xl bg-slate-900/60 backdrop-blur-sm border border-slate-800 hover:border-cyan-500/60 hover:shadow-xl hover:shadow-cyan-950/40 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-black text-xl shadow-inner group-hover:scale-105 transition">
+              AF
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-800/60">
+              Network
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">
+            AFN Interoperability
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-6">
+            Native interoperability with the Agent-Friendly Network (AFN). Implements AFN-001 CLI automation, AFN-002 agent social coordination, and distributed cryptographic mailboxes.
+          </p>
+        </div>
+        <a 
+          href="https://github.com/Agent-Friendly-Network" 
+          target="_blank" 
+          rel="noreferrer" 
+          class="text-xs font-semibold text-cyan-400 group-hover:text-cyan-300 transition flex items-center gap-1.5 pt-4 border-t border-slate-800/80"
+        >
+          <span>Explore AFN Standards</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+
+    </div>
+  </Container>
+</Section>

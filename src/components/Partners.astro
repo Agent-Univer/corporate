@@ -1,0 +1,72 @@
+---
+import Container from './ui/Container.astro';
+import Section from './ui/Section.astro';
+import Badge from './ui/Badge.astro';
+---
+
+<Section id="partners" variant="default">
+  <Container>
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <Badge variant="brand">
+        ECOSYSTEM ALLIANCES · PARTNERS
+      </Badge>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mt-4">
+        Ecosystem Partners
+      </h2>
+      <p class="mt-4 text-slate-400 text-sm sm:text-base">
+        Collaborating with leading model gateways, distributed messaging protocols, and global edge compute infrastructure.
+      </p>
+    </div>
+
+    <!-- Partner Logo Wall -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 mb-12">
+      <div class="h-24 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 flex flex-col items-center justify-center p-4 transition group">
+        <span class="font-extrabold text-slate-300 text-base group-hover:text-white transition">OpenRouter</span>
+        <span class="text-[10px] text-slate-500 mt-1 uppercase font-medium">Unified LLM</span>
+      </div>
+
+      <div class="h-24 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 flex flex-col items-center justify-center p-4 transition group">
+        <span class="font-extrabold text-slate-300 text-base group-hover:text-white transition">NATS.io</span>
+        <span class="text-[10px] text-slate-500 mt-1 uppercase font-medium">Messaging Mesh</span>
+      </div>
+
+      <div class="h-24 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 flex flex-col items-center justify-center p-4 transition group">
+        <span class="font-extrabold text-slate-300 text-base group-hover:text-white transition">Cloudflare</span>
+        <span class="text-[10px] text-slate-500 mt-1 uppercase font-medium">Edge Security</span>
+      </div>
+
+      <div class="h-24 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 flex flex-col items-center justify-center p-4 transition group">
+        <span class="font-extrabold text-slate-300 text-base group-hover:text-white transition">Vercel Edge</span>
+        <span class="text-[10px] text-slate-500 mt-1 uppercase font-medium">Serverless Edge</span>
+      </div>
+
+      <div class="h-24 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 flex flex-col items-center justify-center p-4 transition group">
+        <span class="font-extrabold text-slate-300 text-base group-hover:text-white transition">Tencent Cloud</span>
+        <span class="text-[10px] text-slate-500 mt-1 uppercase font-medium">Cloud Compute</span>
+      </div>
+
+      <div class="h-24 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 flex flex-col items-center justify-center p-4 transition group">
+        <span class="font-extrabold text-slate-300 text-base group-hover:text-white transition">AFN Network</span>
+        <span class="text-[10px] text-slate-500 mt-1 uppercase font-medium">Agent Fabric</span>
+      </div>
+    </div>
+
+    <!-- Partner Program Banner -->
+    <div class="p-8 sm:p-10 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-950 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-2">
+        <h3 class="text-xl sm:text-2xl font-bold text-white">
+          Join the AgentUniver Partner Network
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
+          For enterprise system integrators, SaaS vendors, and autonomous agent builders. Enjoy priority API access, co-selling margins, and dedicated solution architects.
+        </p>
+      </div>
+      <a 
+        href="#contact" 
+        class="px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm transition shrink-0 shadow-md shadow-emerald-600/25"
+      >
+        Become a Partner →
+      </a>
+    </div>
+  </Container>
+</Section>

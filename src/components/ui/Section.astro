@@ -1,0 +1,19 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+  variant?: 'default' | 'muted' | 'gradient';
+}
+
+const { id, class: className = '', variant = 'default' } = Astro.props;
+
+const variantClasses = {
+  default: 'bg-slate-950 border-slate-900',
+  muted: 'bg-slate-950/70 border-slate-900',
+  gradient: 'bg-gradient-to-b from-slate-950 via-emerald-950/20 to-slate-950 border-slate-900'
+};
+---
+
+<section id={id} class={`py-24 sm:py-28 lg:py-32 border-b ${variantClasses[variant]} ${className}`}>
+  <slot />
+</section>

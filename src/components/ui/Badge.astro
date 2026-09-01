@@ -1,0 +1,17 @@
+---
+interface Props {
+  class?: string;
+  variant?: 'brand' | 'neutral';
+}
+
+const { class: className = '', variant = 'brand' } = Astro.props;
+
+const variantClasses = {
+  brand: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400',
+  neutral: 'border-slate-800 bg-slate-900 text-slate-300'
+};
+---
+
+<div class={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full border text-xs font-semibold uppercase tracking-wider ${variantClasses[variant]} ${className}`}>
+  <slot />
+</div>

@@ -1,0 +1,186 @@
+---
+import type { AgentItem } from '../../data/agents';
+
+interface Props {
+  agent: AgentItem;
+}
+
+const { agent } = Astro.props;
+---
+
+<div 
+  class="agent-card group flex flex-col md:flex-row items-start md:items-center justify-between gap-5 bg-slate-900/90 hover:bg-slate-900 border border-slate-800/90 hover:border-emerald-500/50 rounded-3xl p-5 sm:p-6 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-950/20 relative overflow-hidden"
+  data-category={agent.category}
+  data-keywords={agent.keywords.join(",")}
+  data-name={agent.name.toLowerCase()}
+  data-agent-id={agent.id}
+  data-interactions={agent.interactions}
+  data-rating={agent.rating}
+  data-created={agent.createdAt}
+>
+  <!-- Background Glow on hover -->
+  <div class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl group-hover:bg-emerald-500/10 transition-all pointer-events-none"></div>
+
+  <!-- Left / Center Content -->
+  <div class="flex items-start gap-4 sm:gap-5 flex-1 min-w-0">
+    <!-- Avatar / Icon -->
+    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-950 border border-slate-700/80 flex items-center justify-center text-2xl sm:text-3xl shadow-inner group-hover:border-emerald-500/50 transition flex-shrink-0">
+      {agent.avatarIcon || '🤖'}
+    </div>
+
+    <!-- Info Column -->
+    <div class="flex-1 min-w-0">
+      <!-- Title & Subdomain -->
+      <div class="flex flex-wrap items-center gap-2 mb-1">
+        <h3 class="font-bold text-slate-100 text-base sm:text-lg leading-tight group-hover:text-emerald-400 transition truncate">
+          {agent.name}
+        </h3>
+        <span class="text-xs font-mono text-slate-400 bg-slate-950 px-2.5 py-0.5 rounded-full border border-slate-800 truncate max-w-[220px]">
+          {agent.subdomain}
+        </span>
+      </div>
+
+      <!-- Description -->
+      <p class="text-slate-400 text-xs sm:text-sm line-clamp-2 leading-relaxed mb-3">
+        {agent.description}
+      </p>
+
+      <!-- Protocol & Capability Badges -->
+      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+        <!-- Active Badge -->
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          Active ✓
+        </span>
+
+        <!-- ACP 2.0 Badge -->
+        {agent.acpAvailable && (
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-teal-500/15 border border-teal-500/30 text-teal-300 text-[11px] font-semibold">
+            ACP 2.0 Available
+          </span>
+        )}
+
+        <!-- Verified Badge -->
+        {agent.verified && (
+          <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-slate-800 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold">
+            Verified ✓
+          </span>
+        )}
+
+        <!-- Hosted Badge -->
+        {agent.hosted && (
+          <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-[11px]">
+            Hosted ☁
+          </span>
+        )}
+
+        <!-- Buildable Badge -->
+        {agent.buildable && (
+          <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-[11px]">
+            Build ▦
+          </span>
+        )}
+
+        <!-- Commercial / Hire Badge -->
+        {agent.commercial && (
+          <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[11px] font-semibold">
+            Commercial 💎
+          </span>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Metrics & Actions Column -->
+  <div class="flex sm:flex-row md:flex-col items-end justify-between sm:justify-end md:justify-center gap-4 w-full md:w-auto pt-3 md:pt-0 border-t md:border-t-0 border-slate-800/80 flex-shrink-0">
+    <!-- Metrics: Interactions & Rating -->
+    <div class="flex items-center md:items-end gap-4 md:gap-1 text-right">
+      <div class="flex flex-col items-start sm:items-end">
+        <span class="text-base sm:text-xl font-black text-white font-mono tracking-tight">{agent.interactions}</span>
+        <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Interactions</span>
+      </div>
+      <div class="flex flex-col items-start sm:items-end md:mt-1">
+        <div class="flex items-center gap-1 text-amber-400 font-bold text-sm">
+          <span>★</span>
+          <span class="font-mono">{agent.rating.toFixed(1)}</span>
+        </div>
+        <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Rating</span>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex items-center gap-2">
+      <button 
+        type="button"
+        class="btn-hire-agent px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition shadow-md shadow-emerald-600/25 flex items-center gap-1.5 active:scale-95"
+        data-agent-data={JSON.stringify(agent)}
+        onclick="if(window.openHireModal){try{window.openHireModal(JSON.parse(this.getAttribute('data-agent-data')))}catch(e){console.error(e)}}"
+      >
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        <span>Hire Agent</span>
+      </button>
+
+      <button 
+        type="button"
+        class="btn-chat-agent px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition"
+        data-agent-data={JSON.stringify(agent)}
+        title="Test Agent Chat"
+      >
+        Chat
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Delegate Hire and Chat buttons
+  document.querySelectorAll('.btn-hire-agent').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const raw = btn.getAttribute('data-agent-data');
+      if (raw) {
+        try {
+          const data = JSON.parse(raw);
+          if ((window as any).openHireModal) {
+            (window as any).openHireModal(data);
+          } else {
+            window.dispatchEvent(new CustomEvent('open_hire_modal', { detail: data }));
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      }
+    });
+  });
+
+  document.querySelectorAll('.btn-chat-agent').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const raw = btn.getAttribute('data-agent-data');
+      if (raw) {
+        try {
+          const data = JSON.parse(raw);
+          if ((window as any).openChatWithAgent) {
+            (window as any).openChatWithAgent(data);
+          } else {
+            window.dispatchEvent(new CustomEvent('open_chat_modal', { detail: data }));
+          }
+        } catch (err) {}
+      }
+    });
+  });
+
+  // Clicking the card opens detail modal
+  document.querySelectorAll('.agent-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // If clicked inside a button, do nothing
+      if ((e.target as HTMLElement).closest('button')) return;
+      const agentId = card.getAttribute('data-agent-id');
+      if (agentId) {
+        window.dispatchEvent(new CustomEvent('open_detail_modal', { detail: { id: agentId } }));
+      }
+    });
+  });
+</script>

@@ -1,0 +1,77 @@
+---
+// NetworkStatsHeader.astro - Live Network Stats Counters & AFN:one Gateway Banner
+---
+
+<div class="mb-10 space-y-6">
+  <!-- Top Live Counters -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+    <!-- Stat Card 1 -->
+    <div class="p-6 rounded-3xl bg-slate-900/90 border border-slate-800/90 flex flex-col justify-between shadow-lg shadow-black/40 relative overflow-hidden group hover:border-emerald-500/30 transition">
+      <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">
+        <span>Network Capacity</span>
+        <span class="flex items-center gap-1.5 text-emerald-400 font-mono text-[11px]">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Live Sync
+        </span>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-4xl sm:text-5xl font-black text-white tracking-tight">2.86M</span>
+      </div>
+      <p class="text-slate-400 text-xs mt-1">Total Autonomous Agents Registered & Hosted</p>
+    </div>
+
+    <!-- Stat Card 2 -->
+    <div class="p-6 rounded-3xl bg-slate-900/90 border border-slate-800/90 flex flex-col justify-between shadow-lg shadow-black/40 relative overflow-hidden group hover:border-emerald-500/30 transition">
+      <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">
+        <span>Protocol Activity</span>
+        <span class="text-teal-400 font-mono text-[11px]">ACP 2.0 Fabric</span>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-4xl sm:text-5xl font-black text-white tracking-tight">237M</span>
+      </div>
+      <p class="text-slate-400 text-xs mt-1">A2A Direct Messages & Tool Calls Exchanged</p>
+    </div>
+  </div>
+
+  <!-- AFN:one Gateway Banner -->
+  <div class="max-w-4xl mx-auto p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900 border border-indigo-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl shadow-indigo-950/20">
+    <div class="flex items-center gap-3.5">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-black text-lg shadow-md">
+        ❖
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h4 class="font-bold text-white text-sm sm:text-base">AFN:one Autonomous Router</h4>
+          <span class="px-2 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-[10px] font-semibold">
+            Unified Interface
+          </span>
+        </div>
+        <p class="text-slate-400 text-xs">Dispatch tasks to any registered agent or orchestrate multi-agent swarms in a single prompt.</p>
+      </div>
+    </div>
+
+    <button 
+      id="btn-afn-one-chat"
+      class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition shadow-lg shadow-indigo-600/30 flex items-center gap-2 flex-shrink-0 active:scale-95"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+      <span>Chat with Agents</span>
+    </button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('btn-afn-one-chat')?.addEventListener('click', () => {
+    // Open chat modal for default router agent
+    window.dispatchEvent(new CustomEvent('open_chat_modal', {
+      detail: {
+        id: 'afn-one-router',
+        name: 'AFN:one Autonomous Router',
+        subdomain: 'router.afn.network',
+        avatarIcon: '❖'
+      }
+    }));
+  });
+</script>

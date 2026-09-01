@@ -1,0 +1,140 @@
+/* Stardrive Visual System & Cosmic AI Theme */
+
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  position: relative;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+:root {
+  --stars1: 524px 1087px #10b981, 732px 1459px #34d399, 1342px 789px #fff, 1923px 432px #06b6d4, 342px 1890px #6ee7b7, 1542px 1230px #fff, 890px 240px #10b981, 230px 650px #fff, 1780px 1670px #34d399, 1120px 1980px #fff;
+  --stars2: 890px 450px #10b981, 1450px 1120px #06b6d4, 320px 1420px #fff, 1890px 780px #34d399, 670px 1980px #fff, 1200px 340px #10b981, 450px 890px #06b6d4;
+  --stars3: 1200px 800px #34d399, 600px 1600px #fff, 1600px 400px #10b981, 300px 1100px #06b6d4;
+}
+
+/* Hero Cosmic Atmosphere */
+.stardrive-hero {
+  background: radial-gradient(at 50% 35%, #022c22 0%, #021a14 45%, #020617 100%);
+  position: relative;
+  overflow: hidden;
+  contain: paint;
+}
+
+.stardrive-galaxy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2600px;
+  height: 2600px;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  animation: 160s linear infinite galaxyRotate;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes galaxyRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.stardrive-nebula {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(50% 40% at 30% 35%, rgba(16, 185, 129, 0.28) 0%, transparent 70%),
+    radial-gradient(40% 30% at 70% 60%, rgba(6, 182, 212, 0.22) 0%, transparent 65%),
+    radial-gradient(45% 45% at 55% 20%, rgba(16, 185, 129, 0.18) 0%, transparent 60%),
+    radial-gradient(60% 40% at 45% 80%, rgba(4, 47, 46, 0.45) 0%, transparent 75%);
+  animation: 20s ease-in-out infinite alternate nebulaPulse;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes nebulaPulse {
+  0% { opacity: 0.7; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1.02); }
+}
+
+/* Twinkle Stars Layers */
+.starfield-1:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5px;
+  height: 1.5px;
+  box-shadow: var(--stars1);
+  background-color: transparent;
+  border-radius: 9999px;
+  animation: 8s ease-in-out infinite alternate starTwinkle;
+}
+
+.starfield-2:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5px;
+  height: 2.5px;
+  box-shadow: var(--stars2);
+  background-color: transparent;
+  border-radius: 9999px;
+  animation: 12s ease-in-out infinite alternate starTwinkle;
+}
+
+.starfield-3:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.5px;
+  height: 3.5px;
+  box-shadow: var(--stars3);
+  background-color: transparent;
+  border-radius: 9999px;
+  animation: 16s ease-in-out infinite alternate starTwinkle;
+}
+
+@keyframes starTwinkle {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* Graph Paper Tech Grid Matrix */
+.graph-paper-bg {
+  position: relative;
+}
+
+.graph-paper-bg:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(rgba(52, 211, 153, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(52, 211, 153, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(52, 211, 153, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(52, 211, 153, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, transparent 75%);
+}
+
+/* Glow Elements */
+.cta-glow {
+  background: radial-gradient(at 50% 0%, rgba(16, 185, 129, 0.22) 0%, transparent 65%);
+}
+
+.hero-glow-title {
+  text-shadow: 0 0 80px rgba(16, 185, 129, 0.35);
+}

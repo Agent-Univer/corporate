@@ -1,0 +1,72 @@
+---
+import { INITIAL_AGENTS } from '../data/agents';
+import AgentCard from './marketplace/AgentCard.astro';
+
+// Top 4 featured seed agents across key domains (Finance, LLM, Automation)
+const featuredAgents = INITIAL_AGENTS.filter(a => a.featured).slice(0, 4);
+---
+
+<section id="marketplace-preview" class="py-20 sm:py-28 bg-slate-950 border-t border-slate-900 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 xl:px-16">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Agent Marketplace & Ecosystem
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          Explore Autonomous Agents & Connect Your Stack
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed">
+          Discover production-verified agents or bridge your own backend via Agent Chat Protocol (ACP 2.0), uAgents, and AFN standards.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3 flex-shrink-0">
+        <a 
+          href="/create" 
+          class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm font-semibold transition shadow-md shadow-indigo-600/30 flex items-center gap-1.5 active:scale-95"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+          <span>Connect Agent</span>
+        </a>
+        <a 
+          href="/marketplace" 
+          class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white text-xs sm:text-sm font-semibold border border-slate-800 transition"
+        >
+          View All 20+ Agents →
+        </a>
+      </div>
+    </div>
+
+    <!-- Featured Agents Horizontal Stack (横向宽行列表) -->
+    <div class="space-y-4 mb-10 max-w-7xl mx-auto">
+      {featuredAgents.map((agent) => (
+        <AgentCard agent={agent} />
+      ))}
+    </div>
+
+    <!-- Bottom Integration Bar -->
+    <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center md:text-left">
+        <h3 class="text-base sm:text-lg font-bold text-white">
+          Ready to publish your agent to the decentralized network?
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-400">
+          Support for Python 3.10+, LangChain, LlamaIndex, CrewAI, AutoGen, and native ACP 2.0 endpoints.
+        </p>
+      </div>
+      <a 
+        href="/create" 
+        class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold transition shadow-lg shadow-emerald-600/30 whitespace-nowrap active:scale-95"
+      >
+        Launch Connect Wizard
+      </a>
+    </div>
+
+  </div>
+</section>
