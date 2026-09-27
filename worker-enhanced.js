@@ -9,7 +9,16 @@ addEventListener('fetch', event => {
 
 async function handleRequest(request) {
   const url = new URL(request.url);
-  const path = url.pathname + url.search;
+  let path = url.pathname + url.search;
+
+  // Transparently map audit.agentuniver.com subdomain to /audit
+  if (url.hostname === 'audit.agentuniver.com') {
+    if (url.pathname === '/' || url.pathname === '') {
+      path = '/audit' + url.search;
+    } else if (!url.pathname.startsWith('/audit') && !url.pathname.startsWith('/api/')) {
+      path = '/audit' + url.pathname + url.search;
+    }
+  }
 
   const PRIMARY = typeof PRIMARY_ORIGIN !== 'undefined' ? PRIMARY_ORIGIN : 'https://vercel.agentuniver.com';
   const SECONDARY = typeof SECONDARY_ORIGIN !== 'undefined' ? SECONDARY_ORIGIN : 'https://netlify.agentuniver.com';
